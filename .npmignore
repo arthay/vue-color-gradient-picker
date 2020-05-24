@@ -5,4 +5,6 @@ public
 babel.config.js
 jsconfig.json
 rollup.config.js
+vue.config.js
 yarn.lock
+yarn-error.lock

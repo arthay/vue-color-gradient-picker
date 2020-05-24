@@ -1,3 +1,4 @@
+import vue from 'rollup-plugin-vue';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-buble';
 import json from '@rollup/plugin-json';
@@ -5,7 +6,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import scss from 'rollup-plugin-scss';
 import copy from 'rollup-plugin-copy-assets';
 import includePaths from 'rollup-plugin-includepaths';
-import vue from 'rollup-plugin-vue';
 import alias from '@rollup/plugin-alias';
 
 import pkg from './package.json';
