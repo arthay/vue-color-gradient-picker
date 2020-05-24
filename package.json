@@ -20,7 +20,9 @@
     "serve": "vue-cli-service serve",
     "build": "rimraf dist && rollup -c",
     "build:demo": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "yarn run build:demo",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "vue-fragment": "^1.5.1"
