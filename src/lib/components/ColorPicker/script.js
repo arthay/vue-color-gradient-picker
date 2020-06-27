@@ -21,6 +21,9 @@ export default {
                 green: 0,
                 blue: 0,
                 alpha: 1,
+                hue: 0,
+                saturation: 100,
+                value: 100,
             })
         },
 

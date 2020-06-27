@@ -1,7 +1,7 @@
 {
   "name": "vue-color-gradient-picker",
   "description": "Color and gradient picker for vue.js",
-  "version": "0.1.12",
+  "version": "0.1.2",
   "main": "./dist/index-cjs.js",
   "module": "./dist/index-es.js",
   "browser": "./dist/index-cjs.js",

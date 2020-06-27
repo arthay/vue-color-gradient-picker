@@ -89,7 +89,7 @@ export default {
             if (this.gradientPoints.length <= 2) {
                 return;
             }
-            console.log(this.gradientPoints);
+
             this.gradientPoints.splice(index, 1);
 
 

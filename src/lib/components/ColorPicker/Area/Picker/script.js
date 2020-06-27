@@ -60,8 +60,7 @@ export default {
 
     methods: {
         mouseDownHandler(event) {
-            const elementX = event.currentTarget.getBoundingClientRect().x;
-            const elementY = event.currentTarget.getBoundingClientRect().y;
+            const { x: elementX, y: elementY } = this.$refs.pickerAreaRef.getBoundingClientRect();
             const startX = event.pageX;
             const startY = event.pageY;
             const positionX = startX - elementX;

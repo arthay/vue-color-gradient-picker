@@ -31,12 +31,12 @@ export default {
 
             if (Number.isNaN(value) || value.length > 3 || value < 0 || value > 255) {
                 this.inputValue = this.value;
-                console.log(this.inputValue, '');
+
                 this.$forceUpdate();
 
                 return;
             }
-            console.log(value);
+
             this.inputValue = event.target.value;
 
             this.onChange(value);

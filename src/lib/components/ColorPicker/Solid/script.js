@@ -23,18 +23,9 @@ export default {
             type: Number,
             default: 1
         },
-        hue: {
-            type: Number,
-            default: 0
-        },
-        saturation: {
-            type: Number,
-            default: 100
-        },
-        value: {
-            type: Number,
-            default: 100
-        },
+        hue: Number,
+        saturation: Number,
+        value: Number,
         onStartChange: Function,
         onChange: Function,
         onEndChange: Function,
@@ -69,6 +60,45 @@ export default {
         this.colorHue = hue;
         this.colorSaturation = saturation;
         this.colorValue = value;
+    },
+
+    computed: {
+        hsv() {
+            if (this.hue === undefined || this.saturation === undefined || this.value=== undefined) {
+                return rgbToHsv({ red: this.red, green: this.green, blue: this.blue });
+            }
+
+            return  {
+                hue: this.hue,
+                saturation: this.saturation,
+                value: this.value,
+            }
+        },
+
+        color() {
+            return {
+                red: this.red,
+                green: this.green,
+                blue: this.blue,
+                alpha: this.alpha,
+
+            }
+        }
+    },
+
+    watch: {
+        hsv: function ({ hue, saturation, value }) {
+            this.colorHue = hue;
+            this.colorSaturation = saturation;
+            this.colorValue = value;
+        },
+
+        color: function ({ red, green, blue, alpha }) {
+            this.colorRed = red;
+            this.colorGreen = green;
+            this.colorBlue = blue;
+            this.colorAlpha = alpha;
+        },
     },
 
     methods: {

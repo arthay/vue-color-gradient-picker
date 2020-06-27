@@ -48,7 +48,7 @@ export default {
     methods: {
         pointsContainerClick(event) {
             const left = updateGradientActivePercent(event.pageX - this.positions.x, this.width);
-            console.log(1);
+
             this.addPoint(left);
         },
     }

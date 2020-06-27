@@ -54,7 +54,7 @@ export default {
 
   methods: {
     onChange(attrs, name) {
-      console.log(name);
+      this.color = { ...attrs };
     }
   }
 }
