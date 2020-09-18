@@ -69,7 +69,27 @@ export default {
             }
         }
     },
-
+    watch:{
+        points(val){
+            this.gradientPoints= val
+            this.activePoint= val[0]
+            this.colorRed= val[0].red
+            this.colorGreen= val[0].green
+            this.colorBlue= val[0].blue
+            this.colorAlpha= val[0].alpha
+            const { hue, saturation, value } = rgbToHsv({ red: this.colorRed, green: this.colorGreen, blue: this.colorBlue });
+            this.colorHue = hue;
+            this.colorSaturation = saturation;
+            this.colorValue = value;
+        },
+        type(val){
+            this.gradientType=val
+        },
+        degree(val){
+            this.gradientDegree=val
+        }
+        
+    },
     mounted() {
         const { hue, saturation, value } = rgbToHsv({ red: this.colorRed, green: this.colorGreen, blue: this.colorBlue });
 
