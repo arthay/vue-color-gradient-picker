@@ -39,8 +39,8 @@ export default {
         mouseDownHandler(event) {
             this.changeActivePointIndex(this.index);
 
-            const startX = event.pageX;
-            const startY = event.pageY;
+            const startX = event.clientX;
+            const startY = event.clientY;
             const offsetX = startX - this.positions.x;
 
             this.updateGradientLeft(this.point.left, this.index, 'onStartChange');
@@ -54,7 +54,7 @@ export default {
         },
 
         changeObjectPositions(event, { startX, offsetX }) {
-            const moveX = event.pageX - startX;
+            const moveX = event.clientX - startX;
             offsetX += moveX;
             // update point percent
             const left = updateGradientActivePercent(offsetX, this.width);
@@ -62,7 +62,7 @@ export default {
             return {
                 positions: {
                     offsetX,
-                    startX: event.pageX,
+                    startX: event.clientX,
                 },
                 left,
             };

@@ -48,7 +48,7 @@ export default {
     methods: {
         mouseDownHandler(event) {
             const elementX = event.currentTarget.getBoundingClientRect().x;
-            const startX = event.pageX;
+            const startX = event.clientX;
             const positionX = startX - elementX;
 
             this.updateColor({ alpha: getAlpha(positionX, this.width) }, 'onStartChange');
@@ -61,7 +61,7 @@ export default {
         },
 
         changeObjectPositions(event, { startX, positionX }) {
-            const moveX = event.pageX - startX;
+            const moveX = event.clientX - startX;
             positionX += moveX;
 
             const alpha = getAlpha(positionX, this.width);
@@ -69,7 +69,7 @@ export default {
             return {
                 positions: {
                     positionX,
-                    startX: event.pageX,
+                    startX: event.clientX,
                 },
                 alpha,
             };
