@@ -61,8 +61,8 @@ export default {
     methods: {
         mouseDownHandler(event) {
             const { x: elementX, y: elementY } = this.$refs.pickerAreaRef.getBoundingClientRect();
-            const startX = event.pageX;
-            const startY = event.pageY;
+            const startX = event.clientX;
+            const startY = event.clientY;
             const positionX = startX - elementX;
             const positionY = startY - elementY;
 
@@ -79,8 +79,8 @@ export default {
         },
 
         changeObjectPositions(event, { startX, startY, positionX, positionY }) {
-            const moveX = event.pageX - startX;
-            const moveY = event.pageY - startY;
+            const moveX = event.clientX - startX;
+            const moveY = event.clientY - startY;
             positionX += moveX;
             positionY += moveY;
 
@@ -90,8 +90,8 @@ export default {
                 positions: {
                     positionX,
                     positionY,
-                    startX: event.pageX,
-                    startY: event.pageY,
+                    startX: event.clientX,
+                    startY: event.clientY,
                 },
                 color,
             };
