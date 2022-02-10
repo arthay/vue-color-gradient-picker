@@ -44,7 +44,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "gh-pages": "^2.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "rollup": "^2.10.5",
     "rollup-plugin-copy-assets": "^2.0.1",
     "rollup-plugin-includepaths": "^0.2.3",
